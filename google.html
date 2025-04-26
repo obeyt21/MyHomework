@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box{
+        width: 100%;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .logo{width: 100%;
+        height: 50%;
+    }
+    .logo{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo img{
+        width: 50%;
+    }
+    .arabtn{
+        display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 14px 20px;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      box-shadow: none;
+      font-size: 16px;
+      outline: none;
+      transition: box-shadow 0.2s;
+    }
+
+    .search-input:focus {
+      box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+      border-color: rgba(223,225,229,0);
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-button {
+      background-color: #f8f9fa;
+      border: 1px solid #f8f9fa;
+      border-radius: 4px;
+      padding: 10px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      color: #3c4043;
+    }
+
+    .search-button:hover {
+      border: 1px solid #dadce0;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="logo">
+                <img src="gogle.svg" alt="Google-logo">
+            </div>
+            <div class="arabtn">
+                <input type="text" class="search-input" placeholder="Google'da ara">
+                <div class="buttons">
+                    <button class="search-button">Google'da Ara</button>
+                    <button class="search-button">Kendimi Şanslı Hissediyorum</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.search-button').addEventListener('click', function() {
+            const query = document.querySelector('.search-input').value;
+            if(query.trim() !== ""){
+                const googleUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+                window.location.href = googleUrl;
+            }
+        });
+        </script>
+</body>
+</html>
